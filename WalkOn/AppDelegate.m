@@ -52,7 +52,7 @@
     if ([WOLastPlayedTracker canPlay]) {
         NSLog(@"************** CAN PLAY VIA BEACON *************");
         [WOLastPlayedTracker updateLastPlayed];
-        [WOSongPlayer playSongOfName:@"juicy"];
+        [WOSongPlayer playSongOfName:@"imperial_march"];
     }
 }
 

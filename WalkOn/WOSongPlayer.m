@@ -21,6 +21,7 @@
                                                      error:&error];
     if (error == nil) {
         NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"WalkOnPlayedSong" object:self];
         NSLog(@"successs data: %@", message);
     } else {
         NSLog(@"error playing song: %@", error);

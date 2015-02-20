@@ -10,6 +10,7 @@
 
 @interface WOLastPlayedTracker : NSObject
 + (void)initLastPlayed;
++ (NSString *)formattedLastPlayed;
 + (NSDate *)lastPlayed;
 + (void)updateLastPlayed;
 + (void)backdateLastPlayed;

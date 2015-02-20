@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qDT-s1-q5O">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="PRi-dK-PWI">
+            <objects>
+                <navigationController id="qDT-s1-q5O" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OYE-FP-vgO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="ZA4-Dj-gIJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1t7-cX-uni" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-428" y="-340"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -16,7 +32,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh4-Mk-sZa">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh4-Mk-sZa">
                                 <rect key="frame" x="265" y="130" width="70" height="30"/>
                                 <state key="normal" title="Play Song">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,6 +50,12 @@
                                     <action selector="resetLastPlayed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xnh-oY-YVl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Played Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cER-r8-3Qr">
+                                <rect key="frame" x="234" y="359" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -41,12 +63,19 @@
                             <constraint firstAttribute="centerX" secondItem="zh4-Mk-sZa" secondAttribute="centerX" id="83S-fI-r70"/>
                             <constraint firstAttribute="centerY" secondItem="zh4-Mk-sZa" secondAttribute="centerY" constant="155" id="KNW-po-zEy"/>
                             <constraint firstAttribute="centerY" secondItem="JBU-Xv-i66" secondAttribute="centerY" constant="43" id="NBt-xc-teI"/>
+                            <constraint firstAttribute="centerX" secondItem="cER-r8-3Qr" secondAttribute="centerX" id="TOv-1W-TYi"/>
                             <constraint firstAttribute="centerX" secondItem="JBU-Xv-i66" secondAttribute="centerX" constant="-0.5" id="pdv-4z-1v5"/>
+                            <constraint firstItem="cER-r8-3Qr" firstAttribute="top" secondItem="JBU-Xv-i66" secondAttribute="bottom" constant="87" id="wbh-m9-IoF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="iNy-7n-bZu"/>
+                    <connections>
+                        <outlet property="lastPlayedLabel" destination="cER-r8-3Qr" id="Oqr-aR-Maz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="318" y="-340"/>
         </scene>
     </scenes>
 </document>

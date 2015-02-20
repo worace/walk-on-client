@@ -28,6 +28,12 @@
     return [[NSUserDefaults standardUserDefaults] objectForKey:@"lastPlayedTime"];
 }
 
++ (NSString *)formattedLastPlayed {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd/yyyy hh:mma"];
+    return [formatter stringFromDate:[self lastPlayed]];
+}
+
 + (void)backdateLastPlayed {
     [[NSUserDefaults standardUserDefaults] setObject:[self fourHoursAgo] forKey:@"lastPlayedTime"];
 }
