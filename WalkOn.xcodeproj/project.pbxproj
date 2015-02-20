@@ -14,6 +14,9 @@
 		BB8DA3231A9677D7002364AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB8DA3221A9677D7002364AD /* Images.xcassets */; };
 		BB8DA3261A9677D7002364AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8DA3241A9677D7002364AD /* LaunchScreen.xib */; };
 		BB8DA3321A9677D7002364AD /* WalkOnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DA3311A9677D7002364AD /* WalkOnTests.m */; };
+		BB8DA33C1A96A84A002364AD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8DA33B1A96A84A002364AD /* CoreLocation.framework */; };
+		BB8DA3411A96B00F002364AD /* WOSongPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DA3401A96B00F002364AD /* WOSongPlayer.m */; };
+		BB8DA3441A96B258002364AD /* WOLastPlayedTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DA3431A96B258002364AD /* WOLastPlayedTracker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,11 @@
 		BB8DA32B1A9677D7002364AD /* WalkOnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkOnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8DA3301A9677D7002364AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB8DA3311A9677D7002364AD /* WalkOnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalkOnTests.m; sourceTree = "<group>"; };
+		BB8DA33B1A96A84A002364AD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BB8DA33F1A96B00F002364AD /* WOSongPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOSongPlayer.h; sourceTree = "<group>"; };
+		BB8DA3401A96B00F002364AD /* WOSongPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOSongPlayer.m; sourceTree = "<group>"; };
+		BB8DA3421A96B258002364AD /* WOLastPlayedTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOLastPlayedTracker.h; sourceTree = "<group>"; };
+		BB8DA3431A96B258002364AD /* WOLastPlayedTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOLastPlayedTracker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB8DA33C1A96A84A002364AD /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,7 @@
 		BB8DA3091A9677D7002364AD = {
 			isa = PBXGroup;
 			children = (
+				BB8DA33B1A96A84A002364AD /* CoreLocation.framework */,
 				BB8DA3141A9677D7002364AD /* WalkOn */,
 				BB8DA32E1A9677D7002364AD /* WalkOnTests */,
 				BB8DA3131A9677D7002364AD /* Products */,
@@ -89,6 +99,10 @@
 				BB8DA3221A9677D7002364AD /* Images.xcassets */,
 				BB8DA3241A9677D7002364AD /* LaunchScreen.xib */,
 				BB8DA3151A9677D7002364AD /* Supporting Files */,
+				BB8DA33F1A96B00F002364AD /* WOSongPlayer.h */,
+				BB8DA3401A96B00F002364AD /* WOSongPlayer.m */,
+				BB8DA3421A96B258002364AD /* WOLastPlayedTracker.h */,
+				BB8DA3431A96B258002364AD /* WOLastPlayedTracker.m */,
 			);
 			path = WalkOn;
 			sourceTree = "<group>";
@@ -168,6 +182,12 @@
 				TargetAttributes = {
 					BB8DA3111A9677D7002364AD = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = U8C2EGH3XK;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					BB8DA32A1A9677D7002364AD = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -222,6 +242,8 @@
 				BB8DA31E1A9677D7002364AD /* ViewController.m in Sources */,
 				BB8DA31B1A9677D7002364AD /* AppDelegate.m in Sources */,
 				BB8DA3181A9677D7002364AD /* main.m in Sources */,
+				BB8DA3441A96B258002364AD /* WOLastPlayedTracker.m in Sources */,
+				BB8DA3411A96B00F002364AD /* WOSongPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,9 +365,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WalkOn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -353,9 +378,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WalkOn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

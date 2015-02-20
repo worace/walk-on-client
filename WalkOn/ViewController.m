@@ -7,21 +7,19 @@
 //
 
 #import "ViewController.h"
-
+#import "WOSongPlayer.h"
+#import "WOLastPlayedTracker.h"
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+- (IBAction)playButton:(id)sender {
+    NSLog(@"play the song by sending http req");
+    [WOSongPlayer playSongOfName:@"juicy"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)resetLastPlayed:(id)sender {
+    [WOLastPlayedTracker backdateLastPlayed];
 }
-
 @end
